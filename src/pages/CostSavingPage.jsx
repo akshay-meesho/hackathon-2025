@@ -120,21 +120,22 @@ const CostSavingPage = ({ setPage }) => {
 		[availableFolders, selectedCloud, selectedBuckets]
 	);
 
-	const totalPotentialSavings = useMemo(
-		() => calculateTotalPotentialSavings(chartData),
-		[chartData]
-	);
-
 	const staleFoldersSavings = useMemo(
-		() => calculateStaleFoldersSavings(availableFolders),
+		() => calculateStaleFoldersSavings(availableFolders) * 12,
 		[availableFolders]
 	);
 	const spaceConsumedSavings = useMemo(
-		() => calculateSpaceConsumedSavings(spaceConsumingDirs),
+		() => calculateSpaceConsumedSavings(spaceConsumingDirs) * 12,
 		[spaceConsumingDirs]
 	);
-	const exponentialGrowthSavings = 800; // Hardcoded for now
-	const invisibleDataSavings = 5260; // Fixed value as requested
+	const exponentialGrowthSavings = 36000 * 12; // Hardcoded for now
+	const invisibleDataSavings = 5260 * 12; // Fixed value as requested
+
+	const totalPotentialSavings = useMemo(
+		() =>
+			staleFoldersSavings + spaceConsumedSavings + exponentialGrowthSavings + invisibleDataSavings,
+		[staleFoldersSavings, spaceConsumedSavings, exponentialGrowthSavings, invisibleDataSavings]
+	);
 
 	const selectedStaleSavings = useMemo(
 		() => calculateSelectedStaleSavings(availableFolders, selectedFolders),
@@ -169,7 +170,7 @@ const CostSavingPage = ({ setPage }) => {
 			const totalMonths = 7;
 			const activeMonths = 3; // Last 3 months actively used
 			const staleMonths = 4; // First 4 months negligibly used
-			const monthlySavings = 10000; // $10k/month savings
+			const monthlySavings = 10000; // $10k/yo savings
 			const currentMonthlyCost = 15000; // Total current cost
 			const optimizedCost = currentMonthlyCost - monthlySavings;
 
@@ -209,7 +210,7 @@ const CostSavingPage = ({ setPage }) => {
 		setIsOverallAnalysisLoading(true);
 		setTimeout(() => {
 			setOverallGrowthAnalysis(
-				`AI analysis complete. Implementing lifecycle policies on these directories could save an estimated $${exponentialGrowthSavings}/month.`
+				"All the directories show similar folder named deletion vector, it could be the cause of increase in size."
 			);
 			setIsOverallAnalysisLoading(false);
 		}, 2500);
@@ -225,7 +226,7 @@ const CostSavingPage = ({ setPage }) => {
 					<IconComponent className='h-8 w-8 text-blue-600' />
 				</div>
 				<h3 className='text-lg font-semibold text-gray-800'>{title}</h3>
-				<p className='text-2xl font-bold text-green-600 mt-2'>${savings.toLocaleString()}/month</p>
+				<p className='text-2xl font-bold text-green-600 mt-2'>${savings.toLocaleString()}/yo</p>
 				<p className='text-xs text-gray-500 mt-1'>Forecasted Savings</p>
 			</div>
 		);
@@ -406,7 +407,7 @@ const CostSavingPage = ({ setPage }) => {
 																	{analysisResults[dir.id].dataPattern}
 																</h4>
 																<span className='text-sm bg-red-100 text-red-800 px-3 py-1 rounded-full font-semibold'>
-																	${analysisResults[dir.id].savings.toLocaleString()}/mo Savings
+																	${analysisResults[dir.id].savings.toLocaleString()}/yo Savings
 																</span>
 															</div>
 
@@ -474,7 +475,7 @@ const CostSavingPage = ({ setPage }) => {
 
 																	<div className='space-y-2 text-sm'>
 																		<div className='flex justify-between'>
-																			<span className='text-gray-600'>Current Monthly Cost:</span>
+																			<span className='text-gray-600'>Current Yearly Cost:</span>
 																			<span className='font-semibold'>
 																				${analysisResults[dir.id].currentCost.toLocaleString()}
 																			</span>
@@ -486,7 +487,7 @@ const CostSavingPage = ({ setPage }) => {
 																			</span>
 																		</div>
 																		<div className='flex justify-between border-t pt-2 font-bold'>
-																			<span className='text-gray-700'>Monthly Savings:</span>
+																			<span className='text-gray-700'>Yearly Savings:</span>
 																			<span className='text-red-600'>
 																				${analysisResults[dir.id].savings.toLocaleString()}
 																			</span>
@@ -664,7 +665,7 @@ const CostSavingPage = ({ setPage }) => {
 						</p>
 						<div className='p-6 border border-green-200 bg-green-50 rounded-lg mb-6 text-center'>
 							<h3 className='text-lg font-semibold text-green-800'>Total Invisible Data Savings</h3>
-							<p className='text-4xl font-bold text-green-600'>$5,260/month</p>
+							<p className='text-4xl font-bold text-green-600'>$5,260/yo</p>
 							<p className='text-sm text-green-700 mt-1'>
 								Potential savings from cleaning up invisible data across all buckets
 							</p>
@@ -719,16 +720,16 @@ const CostSavingPage = ({ setPage }) => {
 			<div className='text-center mb-6'>
 				<h1 className='text-3xl font-bold text-gray-800'>Cost Savings Analysis</h1>
 				<p className='mt-1 text-gray-500'>
-					Potential monthly savings for selected {selectedCloud.toUpperCase()} buckets.
+					Potential yearly savings for selected {selectedCloud.toUpperCase()} buckets.
 				</p>
 			</div>
 			<div className='p-6 border border-blue-200 bg-blue-50 rounded-lg mb-6 text-center'>
 				<h3 className='text-lg font-semibold text-blue-800'>Total Remaining Potential Savings</h3>
 				<p className='text-4xl font-bold text-blue-600'>
-					${totalPotentialSavings.toLocaleString()}/month
+					${totalPotentialSavings.toLocaleString()}/yo
 				</p>
 			</div>
-			<div className='h-96 w-full'>
+			{/* <div className='h-96 w-full'>
 				<ResponsiveContainer width='100%' height='100%'>
 					<BarChart data={chartData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
 						<CartesianGrid strokeDasharray='3 3' stroke='#e0e0e0' />
@@ -748,13 +749,13 @@ const CostSavingPage = ({ setPage }) => {
 						<Legend />
 						<Bar
 							dataKey='potentialSavings'
-							name='Potential Monthly Savings ($)'
+							name='Potential Yearly Savings ($)'
 							fill='#3b82f6'
 							radius={[4, 4, 0, 0]}
 						/>
 					</BarChart>
 				</ResponsiveContainer>
-			</div>
+			</div> */}
 
 			<div className='mt-10 border-t border-gray-200 pt-8'>
 				<h2 className='text-2xl font-bold text-gray-800 text-center mb-6'>

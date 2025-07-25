@@ -344,6 +344,263 @@ export const EXPONENTIAL_GROWTH_DATA = {
 			],
 		},
 	],
+	"gcp-bucket-16": [
+		{
+			id: "delta-eg-1",
+			name: "/delta_lake/SILVER/supply/addresses",
+			growth: [
+				{ week: "Week 1", size: 33.83 },
+				{ week: "Week 2", size: 67.65 },
+				{ week: "Week 3", size: 135.3 },
+				{ week: "Week 4", size: 270.6 },
+				{ week: "Week 5", size: 541.2 },
+			],
+		},
+		{
+			id: "delta-eg-2",
+			name: "/delta_lake/SILVER/supply/catalogs_repartition",
+			growth: [
+				{ week: "Week 1", size: 24.98 },
+				{ week: "Week 2", size: 49.97 },
+				{ week: "Week 3", size: 99.93 },
+				{ week: "Week 4", size: 199.86 },
+				{ week: "Week 5", size: 399.72 },
+			],
+		},
+		{
+			id: "delta-eg-3",
+			name: "/delta_lake/SILVER/supply/users",
+			growth: [
+				{ week: "Week 1", size: 15.32 },
+				{ week: "Week 2", size: 30.64 },
+				{ week: "Week 3", size: 61.27 },
+				{ week: "Week 4", size: 122.55 },
+				{ week: "Week 5", size: 245.09 },
+			],
+		},
+		{
+			id: "delta-eg-4",
+			name: "/delta_lake/SILVER/supplier_orders/sub_order",
+			growth: [
+				{ week: "Week 1", size: 13.51 },
+				{ week: "Week 2", size: 27.03 },
+				{ week: "Week 3", size: 54.05 },
+				{ week: "Week 4", size: 108.1 },
+				{ week: "Week 5", size: 216.21 },
+			],
+		},
+		{
+			id: "delta-eg-5",
+			name: "/delta_lake/SILVER/ad/catalogs_served_2022_02_11",
+			growth: [
+				{ week: "Week 1", size: 11.15 },
+				{ week: "Week 2", size: 22.29 },
+				{ week: "Week 3", size: 44.58 },
+				{ week: "Week 4", size: 89.16 },
+				{ week: "Week 5", size: 178.32 },
+			],
+		},
+	],
+	"gcp-bucket-17": [
+		{
+			id: "delta-eg-6",
+			name: "/delta_lake/SILVER/inventory/supplier_catalog_management_details",
+			growth: [
+				{ week: "Week 1", size: 10.51 },
+				{ week: "Week 2", size: 21.03 },
+				{ week: "Week 3", size: 42.05 },
+				{ week: "Week 4", size: 84.1 },
+				{ week: "Week 5", size: 168.21 },
+			],
+		},
+		{
+			id: "delta-eg-7",
+			name: "/delta_lake/SILVER/ums/ums_anonymous_user_repartition",
+			growth: [
+				{ week: "Week 1", size: 10.23 },
+				{ week: "Week 2", size: 20.45 },
+				{ week: "Week 3", size: 40.9 },
+				{ week: "Week 4", size: 81.8 },
+				{ week: "Week 5", size: 163.61 },
+			],
+		},
+		{
+			id: "delta-eg-8",
+			name: "/delta_lake/SILVER/supply/order_details_schema_change",
+			growth: [
+				{ week: "Week 1", size: 10.11 },
+				{ week: "Week 2", size: 20.22 },
+				{ week: "Week 3", size: 40.43 },
+				{ week: "Week 4", size: 80.86 },
+				{ week: "Week 5", size: 161.73 },
+			],
+		},
+		{
+			id: "delta-eg-9",
+			name: "/delta_lake/SILVER/ums/user_attributes",
+			growth: [
+				{ week: "Week 1", size: 9.68 },
+				{ week: "Week 2", size: 19.36 },
+				{ week: "Week 3", size: 38.71 },
+				{ week: "Week 4", size: 77.43 },
+				{ week: "Week 5", size: 154.85 },
+			],
+		},
+		{
+			id: "delta-eg-10",
+			name: "/delta_lake/SILVER/inventory/product_supplier_variation_map_new",
+			growth: [
+				{ week: "Week 1", size: 9.52 },
+				{ week: "Week 2", size: 19.04 },
+				{ week: "Week 3", size: 38.09 },
+				{ week: "Week 4", size: 76.17 },
+				{ week: "Week 5", size: 152.35 },
+			],
+		},
+		{
+			id: "delta-eg-11",
+			name: "/delta_lake/SILVER/taxonomy/catalog_collage",
+			growth: [
+				{ week: "Week 1", size: 9.09 },
+				{ week: "Week 2", size: 18.17 },
+				{ week: "Week 3", size: 36.35 },
+				{ week: "Week 4", size: 72.7 },
+				{ week: "Week 5", size: 145.39 },
+			],
+		},
+		{
+			id: "delta-eg-12",
+			name: "/delta_lake/SILVER/supply/product_supplier_map_2021_04_21",
+			growth: [
+				{ week: "Week 1", size: 8.3 },
+				{ week: "Week 2", size: 16.6 },
+				{ week: "Week 3", size: 33.19 },
+				{ week: "Week 4", size: 66.38 },
+				{ week: "Week 5", size: 132.76 },
+			],
+		},
+		{
+			id: "delta-eg-13",
+			name: "/delta_lake/SILVER/supplier_payment/supplier_payment_order_detail_payments_schema_change_schema_change",
+			growth: [
+				{ week: "Week 1", size: 6.92 },
+				{ week: "Week 2", size: 13.84 },
+				{ week: "Week 3", size: 27.68 },
+				{ week: "Week 4", size: 55.37 },
+				{ week: "Week 5", size: 110.73 },
+			],
+		},
+		{
+			id: "delta-eg-14",
+			name: "/delta_lake/SILVER/supply/supplier_order_details_schema_change",
+			growth: [
+				{ week: "Week 1", size: 4.93 },
+				{ week: "Week 2", size: 9.86 },
+				{ week: "Week 3", size: 19.71 },
+				{ week: "Week 4", size: 39.42 },
+				{ week: "Week 5", size: 78.84 },
+			],
+		},
+		{
+			id: "delta-eg-15",
+			name: "/delta_lake/SILVER/bulk_catalog/user_catalog_share_map_08_23",
+			growth: [
+				{ week: "Week 1", size: 4.73 },
+				{ week: "Week 2", size: 9.46 },
+				{ week: "Week 3", size: 18.93 },
+				{ week: "Week 4", size: 37.86 },
+				{ week: "Week 5", size: 75.71 },
+			],
+		},
+		{
+			id: "delta-eg-16",
+			name: "/delta_lake/SILVER/price/product_supplier_price_map_new",
+			growth: [
+				{ week: "Week 1", size: 4.46 },
+				{ week: "Week 2", size: 8.92 },
+				{ week: "Week 3", size: 17.83 },
+				{ week: "Week 4", size: 35.67 },
+				{ week: "Week 5", size: 71.33 },
+			],
+		},
+		{
+			id: "delta-eg-17",
+			name: "/delta_lake/SILVER/msg_fraud_response/fraud_response",
+			growth: [
+				{ week: "Week 1", size: 4.26 },
+				{ week: "Week 2", size: 8.51 },
+				{ week: "Week 3", size: 17.03 },
+				{ week: "Week 4", size: 34.06 },
+				{ week: "Week 5", size: 68.11 },
+			],
+		},
+		{
+			id: "delta-eg-18",
+			name: "/delta_lake/SILVER/supply/shipment_details_schema_change",
+			growth: [
+				{ week: "Week 1", size: 3.91 },
+				{ week: "Week 2", size: 7.83 },
+				{ week: "Week 3", size: 15.65 },
+				{ week: "Week 4", size: 31.31 },
+				{ week: "Week 5", size: 62.62 },
+			],
+		},
+		{
+			id: "delta-eg-19",
+			name: "/delta_lake/SILVER/supply/products_repartition",
+			growth: [
+				{ week: "Week 1", size: 3.41 },
+				{ week: "Week 2", size: 6.81 },
+				{ week: "Week 3", size: 13.62 },
+				{ week: "Week 4", size: 27.25 },
+				{ week: "Week 5", size: 54.5 },
+			],
+		},
+		{
+			id: "delta-eg-20",
+			name: "/delta_lake/SILVER/taxonomy/taxonomy_attribute_store_fix",
+			growth: [
+				{ week: "Week 1", size: 2.98 },
+				{ week: "Week 2", size: 5.97 },
+				{ week: "Week 3", size: 11.93 },
+				{ week: "Week 4", size: 23.86 },
+				{ week: "Week 5", size: 47.73 },
+			],
+		},
+		{
+			id: "delta-eg-21",
+			name: "/delta_lake/SILVER/inhouse_android/image_loading_failed",
+			growth: [
+				{ week: "Week 1", size: 2.67 },
+				{ week: "Week 2", size: 5.35 },
+				{ week: "Week 3", size: 10.7 },
+				{ week: "Week 4", size: 21.4 },
+				{ week: "Week 5", size: 42.8 },
+			],
+		},
+		{
+			id: "delta-eg-22",
+			name: "/delta_lake/SILVER/msg_feedservice/fy_rt_candidate_logs",
+			growth: [
+				{ week: "Week 1", size: 2.56 },
+				{ week: "Week 2", size: 5.11 },
+				{ week: "Week 3", size: 10.22 },
+				{ week: "Week 4", size: 20.44 },
+				{ week: "Week 5", size: 40.89 },
+			],
+		},
+		{
+			id: "delta-eg-23",
+			name: "/delta_lake/SILVER/supply/order_detail_requests_schema_change",
+			growth: [
+				{ week: "Week 1", size: 2.32 },
+				{ week: "Week 2", size: 4.64 },
+				{ week: "Week 3", size: 9.29 },
+				{ week: "Week 4", size: 18.57 },
+				{ week: "Week 5", size: 37.14 },
+			],
+		},
+	],
 };
 
 export const INVISIBLE_DATA = {
